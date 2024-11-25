@@ -1,0 +1,185 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --Blanco-Cafecito: #FEF9D9;
+    --Cafecito: #D5AA7F;
+    --Cafe: #CB9F70;
+    --Cafe-Crema: #C6B891;
+    --Cafe-Oscuro: #703B1B;
+    
+}
+
+/*Cuerpos*/
+
+body{
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background-color: var(--Blanco-Cafecito);
+}
+
+#root{
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: auto;
+}
+
+/*Donde esta el input*/
+
+.inputs{
+    background-color: var(--Cafe-Crema);
+    padding: 3pc;
+    border-radius: 20px;
+    text-align: center;
+    height: 200px;
+    width: 400px;
+}
+
+h1{
+    color: var(--Blanco-Cafecito);
+    margin-bottom: 20px;
+}
+
+input{
+    border: 0;
+    background-color: var(--Blanco-Cafecito);
+    border-radius: 10px;
+    margin-right: 10px;
+    padding: 4px;
+    outline: none;
+}
+
+/*Botones*/
+
+button{
+    border: 0;
+    padding: 4px;
+    border-radius: 5px;
+    background-color: var(--Cafe);
+    color: #703B1B;
+}
+
+button:hover{
+    background-color: var(--Cafe-Oscuro);
+    color: var(--Cafecito);
+    transition: 1s;
+}
+
+/*Caja de las tareas*/
+
+#Tareas{
+    background-color: var(--Cafe-Crema);
+    border-radius: 10px;
+    padding: 0 20px;
+    max-width: 500px;
+    height: 650px;
+    overflow-y: scroll;
+    flex-grow: 1;
+}
+
+h2{
+    color: var(--Blanco-Cafecito);
+    background-color: var(--Cafe-Crema);
+    padding-top: 20px;
+    position: sticky;
+    top: 0px;
+}
+
+#Tareas div{
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.NameText{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 350px;
+    flex-grow: 1;
+}
+
+.taretita:has(input:checked){
+    text-decoration: line-through;
+}
+
+/*Boton de eliminado*/
+
+#imagen{
+    width: 40PX;
+    height: 40px;
+    background-image: url("/Quehaces.png");
+    background-size: cover;
+}
+
+#imagen:hover{
+    background-image: url("/Nononono.png");
+    background-size: cover;
+    animation: Eliminar 0.5s ease-in;
+    
+}
+
+@keyframes Eliminar {
+    0%{
+        transform: translate(3);
+    }
+    
+    100%{
+        transform: translate(0);
+    }
+}
+
+/*Imagenes decorativas*/
+
+.Imagenes{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+p{
+    width: 40%;
+    line-break: anywhere;
+}
+
+#Cansado{
+    width: 150px;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 1050px) {
+    #root{
+        margin: 10px;
+    }
+}
+
+@media screen and (max-width: 930px){
+    #root{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #Tareas {
+        width: 100%;
+    }
+
+    .inputs {
+        width: auto;
+    }
+
+    .Imagenes{
+        margin-bottom: 20px;
+    }
+}
